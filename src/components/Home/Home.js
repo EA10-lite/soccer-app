@@ -4,8 +4,8 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import Menu from '../Menu/Menu'
 const Home = ()=>{
-    const d = new Date()
-    const date = d.toISOString().split('T')[0];
+    // const d = new Date()
+    // const date = d.toISOString().split('T')[0];
     const {data} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?date=2021-11-06`)
     const sortedFixture = {};
     data?.reduce((initial,current)=> {
