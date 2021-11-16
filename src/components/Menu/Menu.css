@@ -1,0 +1,47 @@
+.menu {
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+    position: sticky;
+    top:1000;
+    /* margin:20px 10px; */
+}
+.menu__details {
+    border-bottom: 1px solid lightgray;
+    background-color: #282c34;
+}
+.league__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:5px;
+}
+.country__info {
+    display: flex;
+    align-items: center;
+}
+.country__info img , .dropdown__item img  {
+    width:20px;
+    height: 20px;
+    margin:0 10px;
+}
+
+.dropdown {
+    background-color: white;
+    color:black;
+    font-size: 10px;
+    font-weight: 600;
+}
+.hidden {
+    display: none;
+}
+.dropdown__item {
+    display: flex;
+    align-items: center;
+    padding:5px;
+    border-bottom: 1px solid lightgray;
+}
+.dropdown a {
+    text-decoration: none;
+    color:black;
+}

@@ -1,0 +1,150 @@
+.clubs {
+    position: sticky;
+    top:45px;
+    display: flex;
+    overflow-y: hidden;
+    text-align: center;
+    overflow-x: scroll;
+    background-color: white;
+    padding:15px 10px;
+    border-bottom: 1px solid #1a2b3c;
+    justify-content: center;
+}
+.league__details {
+    margin-bottom: 50px;
+}
+.clubs::-webkit-scrollbar {
+    display:none;
+}
+.brand__club {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.brand__club  img {
+    width:30px;
+    height:30px;
+    margin-right:10px;
+    margin-left: 10px;
+    transition: transform 450ms;
+}
+.brand__club img:hover {
+    transform:scale(1.8) ;
+}
+.club__league__header {
+    padding:50px;
+    /* background-color: #1a2b3c;
+    color:white; */
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.club__league__header img {
+    margin-right: 20px;
+}
+.club__league__header h1 {
+    font-weight: 600;
+    font-size: 60px;
+}
+.league__info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding:0 20px;
+}
+.league__statistics {
+    flex:0.65;
+}
+.league__standings {
+    flex:0.3;
+}
+
+@media screen and(max-width: 700px){
+    .league__info {
+        flex-wrap: wrap-reverse;
+    }
+    .league__statistics {
+        flex:0.8;
+    }
+    .league__standings {
+        flex:0.8;
+    }
+
+}
+
+@media screen and (max-width:900px){
+    .club__league__header img {
+        width:100px;
+        height:100px;
+        padding:10px;
+    }
+    .club__league__header h1 {
+        font-size: 48px;
+
+    }
+    .league__info {
+        display: block;
+        width: 90%;
+        margin:0 auto;
+        padding:0;
+    }
+    .league__statistics {
+        display: block;
+        width:100%;
+    }
+    .league__standings {
+        flex:1;
+    }
+    .brand__club img {
+        width:20px;
+        height:20px;
+    }
+    .clubs {
+        padding:10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .club__league__header img {
+        width:60px;
+        height:60px;
+    }
+    .club__league__header h1 {
+        font-size: 35px;
+
+    }
+    .clubs {
+        padding: 10px 10px;
+    }
+    .brand__club img {
+        width:20px;
+        height:20px;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .league__info {
+        width: 80%;
+        margin:0 auto;
+    }
+}
+
+/* @media screen and (max-width:700px){
+    .league__info {
+        display: block;
+        width: 80%;
+        margin:0 auto;
+    }
+    .league__standings {
+        flex:1;
+    }
+}
+@media screen and (max-width: 600px){
+    .match {
+        margin-bottom: 80px;
+    }
+    .league__match {
+        width: 90%;
+    }
+}  */

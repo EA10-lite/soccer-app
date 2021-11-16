@@ -1,0 +1,113 @@
+.home__header {
+    display: flex;
+    justify-content: center;
+}
+.home__body {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px ;
+    margin-bottom: 80px;
+}
+.home__body .menu {
+    flex:0.2;
+}
+.fixtures {
+    flex:0.7;
+}
+.fixture {
+    margin-bottom: 10px;
+}
+.fixture__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #282c34;
+    align-items: center;
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+    padding:0 10px;
+    border-bottom: 1px solid lightgray;
+}
+.info a{
+    display: flex;
+    align-items: center;
+    color:white;
+    text-decoration: none;
+}
+.info img, .fixture__details img{
+    width:20px;
+    height:20px;
+    margin:10px
+}
+.fixture__body {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.fixture__body a {
+    text-decoration: none;
+    color:black;
+    font-size: 12px;
+    font-weight:600;
+}
+.fixture__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.fixture__menu {
+    flex:0.85;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fixture__time {
+    flex:0.1;
+    justify-content: center;
+    text-align: center;
+}
+.fixture__home, .fixture__away {
+    flex:0.45;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.fixture__scoreline {
+    flex:0.1;
+}
+.fixture__scoreline .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #282c34;
+    border-radius: 4px;
+    font-weight: 600;
+    padding:5px 8px;
+    color: white;
+}
+.fixture__away {
+    justify-content: flex-start;
+}
+.divider {
+    margin:0 5px;
+}
+@media screen and (max-width: 700px){
+    .home__body .menu{
+        display: none;
+    }
+    .fixtures {
+        flex:0.9;
+    }
+}
+@media screen and (max-width: 600px) {
+    .fixture__away,.fixture__home {
+        font-size: 0.65em;
+    }
+    .fixture__scoreline .score {
+        font-size: 12px;
+        padding:4px 5px;
+
+
+    }
+}

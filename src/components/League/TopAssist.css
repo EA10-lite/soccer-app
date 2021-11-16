@@ -1,0 +1,82 @@
+.top__assist {
+    margin-bottom: 20px;
+    cursor:pointer;
+}
+.assist__table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+thead tr{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.assist__table thead tr th {
+    background-color:#1a2b3c ;
+    color:white;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding:5px 10px;
+}
+tbody {
+    background: white;
+}
+tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+tbody tr td {
+    padding:10px;
+}
+.top__assist .sub__title {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding:10px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+.sub__title .more, .less{
+    display: flex;
+    align-items: center;
+}
+.more , .less{
+    color:rgb(233, 0, 82)!important;
+}
+.less {
+    display: none;
+}
+.scorer__info {
+    display: flex;
+    align-items: center;
+    width:50%;
+}
+.scorer__info img {
+    width: 20px;
+    height:20px;
+    margin-right: 10px;
+}
+.scorer__info p, tbody tr td{
+    font-size: 15px;
+    font-weight: 600;
+}
+.td__stats {
+    text-align: center;
+}
+.assist__player__info {
+    text-align: center;
+}
+.empty {
+    text-align: center;
+    padding:10px;
+}
+@media screen and (max-width: 700px) {
+    .top__assist .sub__title, .scorer__info p, tbody tr td, .assist__table thead tr th {
+        font-size: 9px;
+    }
+    .top__assist tbody tr td {
+        padding:5px;
+    }
+}

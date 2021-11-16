@@ -1,0 +1,61 @@
+.table__standings{
+    /* border:1px solid #1a2b3c; */
+    border-radius: 5px;
+    border-collapse: collapse;
+    color:black;
+    width:100%;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+.group {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding:5px 0;
+    background-color: white;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+tr {
+    margin:0;
+    padding:0;
+}
+.table__header {
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #1a2b3c;
+    color: white;
+    padding:10px;
+}
+.table__header th {
+    text-align: left;
+    padding: 10px;
+}
+.table__body td{
+    padding:4px 8px;
+}
+.table__header th p, .table__body td p{
+    font-size: 10px;
+    font-weight: 600;
+}
+.club__info {
+    display: flex;
+    align-items: center;
+}
+.club__info img {
+    height:16px;
+    width: 16px;
+    margin:0 5px;
+}
+.table__body {
+    border-bottom: 1px solid lightgray;
+}
+.table__body .active {
+    background-color: lightgray;
+}
+
+@media screen and (max-width:768px) {
+    .table__standings {
+        box-shadow: none;
+    }
+}

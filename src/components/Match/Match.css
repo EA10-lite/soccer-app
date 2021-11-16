@@ -1,0 +1,217 @@
+.match {
+    cursor:pointer;
+}
+.league__match {
+    display: flex;
+    justify-content: space-around;
+    /* padding:0 10px; */
+}
+.standings{
+    flex: 0.3;
+    margin-bottom: 20px;
+
+}
+.match__details {
+    flex:0.65;
+    justify-content: center;
+}
+
+.title {
+    background-color: #7c8085;
+}
+.info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+.match__header {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+    padding:10 20px;
+}
+.date {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+.ongoing , .fulltime {
+    font-size: 16px;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 10px;
+}
+.date p span {
+    margin-left: 10px;
+}
+.match__info {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-bottom: 10px;
+    margin:0;
+    border-bottom: 1px solid #1a2b3c;
+}
+.match__events {
+    margin:10px 20px;
+    padding-bottom: 10px;
+}
+.events {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+.events .away__events {
+    text-align: right;
+    justify-content: flex-end;
+}
+.events .home__events, .events .away__events, .match__info .match__home, .match__info .match__away{
+    width:45%;
+}
+.events .away__events .scorer__details {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.events .home__events .scorer__details {
+    display: flex;
+    align-items: center;
+}
+.scorer__details .assist {
+    color:darkgray;
+}
+.events .goal__time p{
+    font-size: 12px;
+    font-weight: 600;
+}
+.events__type {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.events__type img {
+    margin-right: 0;
+}
+.events p {
+    margin: 0 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.match__header .match__events img {
+    width: 16px;
+    height: 16px;
+}
+.match__header img {
+    width:30px;
+    height:30px;
+    margin-bottom:2px;
+}
+.match__info p {
+    font-size: 12px;
+    font-weight: 600;
+}
+.match__header .match__home, .match__header .match__away {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match__not__started h3{
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.match__score {
+    display: flex;
+    align-items: center;
+}
+
+.scoreline .match__score  h2 {
+    font-size: 40px;
+    font-weight: 600;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.match__score .match__divider {
+    margin:0 15px;
+}
+
+.other__details {
+    margin-bottom: 20px;
+}
+.mobile__navigations {
+    display: none;
+    width:100%;
+    border-bottom: 1px solid #1a2b3c;
+    padding: 6px 0;
+    background: #7c8085;
+    margin-bottom: 10px;
+}
+.btn__navigations {
+    display: flex;
+    justify-content: center;
+}
+.mobile__navigations button {
+    background: none;
+    color:lightgray;
+    border:none;
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    padding:5px;
+    border-radius: 4px;
+}
+
+ @media screen and (min-width:900px) {
+    .league__match {
+        width: 80%;
+        margin:0 auto;
+    }
+}
+@media screen and (min-width:768px){
+    .title {
+        margin-bottom: 20px;
+    }
+    .other__details__mobile {
+        display: none;
+    }
+}
+@media screen and (max-width:768px){
+    .league__match {
+        display: block;
+        width: 100%;
+        /* margin:0 auto; */
+    }
+    .match__header {
+        background-color:transparent;
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: 1px solid #1a2b3c;
+        margin-bottom: 0px;
+    }
+    .mobile__navigations {
+        display: block;
+    }
+    .standings {
+        width: 90%;
+        margin:0 auto;
+    }
+    .standings p {
+        box-shadow: none;
+    }
+    .other__details, .desktop__view{
+        display: none;
+    }
+    
+}
+/* @media screen and (max-width: 600px){
+    .match {
+        margin-bottom: 80px;
+    }
+}  */

@@ -1,0 +1,65 @@
+.startxi, .substitute, .manager{
+    margin-bottom: 20px;
+    background-color: white;
+    padding:20px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+
+.lineups img {
+    width: 24px;
+    height:24px;
+    padding:0 20px;
+}
+.manager .details img {
+    padding:0 10px;
+}
+.lineups__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.startxi {
+    margin-bottom: 10px;
+}
+
+.details{
+    font-size: 12px;
+    font-weight: 600;
+    padding:0 10px;
+}
+.startxi .details, .manager .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.substitute .details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.player, .coach{
+    display: flex;
+    align-items: center;
+    margin:4px 0;
+}
+.away__startxi .player, .away__sub .player, .away__manager .coach {
+    justify-content: flex-end;
+}
+.away__startxi, .home__startxi, .home__sub, .away__sub{
+    padding:10px;
+}
+.number {
+    margin:0 5px;
+}
+
+@media screen and (max-width:768px ) {
+    .startxi, .substitute, .manager {
+        box-shadow: none;
+        background: none;
+        width: 90%;
+        margin:0 auto;
+    }
+}
