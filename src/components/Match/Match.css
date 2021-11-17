@@ -21,11 +21,14 @@
 }
 .info {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     font-size: 12px;
     font-weight: 600;
     color: white;
+    width:90%;
+    margin:0 auto;
+    overflow: hidden;
 }
 .match__header {
     background-color: white;
@@ -136,7 +139,6 @@
 .scoreline .match__score  h2 {
     font-size: 40px;
     font-weight: 600;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .match__score .match__divider {
     margin:0 15px;
@@ -149,23 +151,33 @@
     display: none;
     width:100%;
     border-bottom: 1px solid #1a2b3c;
-    padding: 6px 0;
     background: #7c8085;
     margin-bottom: 10px;
 }
 .btn__navigations {
     display: flex;
-    justify-content: center;
+    width:90%;
+    margin:0 auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.btn__navigations button.active {
+    background-color: #555;
+    color:white;
+    border:1px solid #1a2b3c;
+}
+.btn__navigations::-webkit-scrollbar {
+    display: none;
 }
 .mobile__navigations button {
     background: none;
-    color:lightgray;
+    color:white;
     border:none;
-    margin-right: 10px;
+    margin-right: 5px;
     font-size: 12px;
     font-weight: 600;
-    padding:5px;
-    border-radius: 4px;
+    padding:6px 16px;
+    font-family: inherit;
 }
 
  @media screen and (min-width:900px) {
@@ -197,6 +209,7 @@
     }
     .mobile__navigations {
         display: block;
+        text-align: center;
     }
     .standings {
         width: 90%;
@@ -210,8 +223,3 @@
     }
     
 }
-/* @media screen and (max-width: 600px){
-    .match {
-        margin-bottom: 80px;
-    }
-}  */

@@ -45,3 +45,9 @@
     text-decoration: none;
     color:black;
 }
+
+@media screen and (max-width:768px){
+    .menu {
+        width: 90%;
+    }
+}

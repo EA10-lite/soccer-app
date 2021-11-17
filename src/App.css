@@ -31,7 +31,9 @@
   font-size: 12px;
   text-decoration: none;
 }
-
+.bottom__nav a.active {
+  color:lightskyblue;
+}
 @media screen and (min-width: 600px) {
   .bottom__nav {
     display: none;

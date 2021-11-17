@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: space-evenly;
     padding:10px 0;
-    border-bottom: 1px solid lightgray;
 }
 .brand a, .auth a{
     display: flex;

@@ -92,6 +92,61 @@
 .divider {
     margin:0 5px;
 }
+.calender__date {
+    background: #7c8085;
+    color:white;
+    padding:4px 0;
+}
+.calender__date > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:80%;
+    margin:0 auto;
+}
+.selected__date {
+    background: #1a2b3c;
+    border:1px solid white;
+    padding:4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.calender__container {
+    display: flex;
+    justify-content: center;
+    margin:20px auto;
+}
+ .react-calendar {
+    font-family: inherit;
+    border-radius: 10px;
+    background: #1a2b3c;
+    color:white;
+}
+.react-calendar__navigation {
+    height:30px;
+    background:white ;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.5);
+}
+abbr[title] {
+    text-decoration: none;
+}
+.react-calendar__month-view__weekdays {
+    font-size: 12px;
+    font-weight: 600;
+}
+.react-calendar__month-view__days__day {
+    font-size: 12px;
+    font-weight: 600;
+    color:white;
+}
+.react-calendar__month-view__days__day--weekend {
+    color:#d10000;
+}
 @media screen and (max-width: 700px){
     .home__body .menu{
         display: none;
@@ -107,7 +162,8 @@
     .fixture__scoreline .score {
         font-size: 12px;
         padding:4px 5px;
-
-
+    }
+    .calender__container {
+        width: 80%;
     }
 }

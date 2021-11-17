@@ -63,11 +63,6 @@ function BasicModal({id, open, handleClose}) {
                           <th>A</th>
                           <th>RC</th>
                           <th>YC</th>
-                          <th>FC</th>
-                          <th>FW</th>
-                          <th>S</th>
-                          <th>D</th>
-                          <th>T</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -79,14 +74,9 @@ function BasicModal({id, open, handleClose}) {
                           <td>{data[0].statistics[0].games.minutes}</td>
                           <td>{data[0].statistics[0].goals.total}</td>
                           <td>{data[0].statistics[0].penalty.total ? data[0].statistics[0].penalty.total : 0}</td>
-                          <td>{data[0].statistics[0].goals.assist ? data[0].statistics[0].goals.assist : 0}</td>
+                          <td>{data[0].statistics[0].goals.assists ? data[0].statistics[0].goals.assists : 0}</td>
                           <td>{data[0].statistics[0].cards.red}</td>
                           <td>{data[0].statistics[0].cards.yellow}</td>
-                          <td>{data[0].statistics[0].fouls.committed ? data[0].statistics[0].fouls.committed : 0}</td>
-                          <td>{data[0].statistics[0].fouls.drawn ? data[0].statistics[0].fouls.drawn : 0}</td>
-                          <td>{data[0].statistics[0].shots.total ? data[0].statistics[0].shots.total : 0}</td>
-                          <td>{data[0].statistics[0].duels.total ? data[0].statistics[0].duels.total : 0}</td>
-                          <td>{data[0].statistics[0].tackles.total  ? data[0].statistics[0].tackles.total : 0 }</td>
                         </tr>
                       </tbody>
                     </table>

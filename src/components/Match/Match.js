@@ -10,7 +10,7 @@ import MatchSummary from '../summary/MatchSummary';
 import Predictions from './Predictions';
 
 const Match = ()=>{
-    const [display, setDisplay] = useState('stats');
+    const [display, setDisplay] = useState('Stats');
     const {id} = useParams();
     const matchId = id.split('&')[0].split('=')[1];
     const leagueId = id.split('&')[1].split('=')[1];
@@ -34,8 +34,13 @@ const Match = ()=>{
 
         return formattedTime;
     }
-    function changeDisplay(title){
+    function changeDisplay(e,title){
         setDisplay(title);
+        const btns = document.querySelectorAll('.btn__navigations button');
+        for (let i=0;i<btns.length;i++){
+           btns[i].className = btns[i].className.replace('active','')
+        }
+        e.currentTarget.className = 'active'
     }
     return (
         <div className="match">
@@ -61,7 +66,7 @@ const Match = ()=>{
                     </div>
                     <div className="match__header">
                         <div className="match__date">
-                            {details[0].fixture.status.elapsed !== null && details[0].fixture.status.short !== 'FT' ? (
+                            {details[0].fixture.status.elapsed !== null && details[0].fixture.status.short !== 'FT' && details[0].fixture.status.short !== 'HT' ? (
                                 <div className="ongoing">
                                     <p> { details[0].fixture.status.elapsed }' </p>
                                 </div>
@@ -116,7 +121,12 @@ const Match = ()=>{
                                                     <p> {item.time.elapsed}' </p>
                                                 </div>
                                                 <div className="goal">
-                                                    <p> { item.player.name } </p>
+                                                    <div>
+                                                        <p>{item.player.name}</p>
+                                                        {item.type === 'Goal' && item.detail === 'Own Goal' ? (
+                                                        <p> (OG) </p>
+                                                    ) : ''}
+                                                    </div>
                                                     {item.assist.name? (
                                                         <div className="assist">
                                                             <p> assist. { item.assist.name} </p>
@@ -135,7 +145,12 @@ const Match = ()=>{
                                         {item.team.id === parseInt(awayId) ? (
                                             <div className="scorer__details">
                                                 <div className="goal">
-                                                    <p> { item.player.name } </p>
+                                                    <div>
+                                                        <p>{item.player.name}</p>
+                                                        {item.type === 'Goal' && item.detail === 'Own Goal' ? (
+                                                        <p> (OG) </p>
+                                                    ) : ''}
+                                                    </div>
                                                     {item.assist.name? (
                                                         <div className="assist">
                                                             <p> assist. { item.assist.name} </p>
@@ -157,12 +172,12 @@ const Match = ()=>{
                     </div>
                     <div className="mobile__navigations">
                         <div className="btn__navigations">
-                            <button onClick={()=> changeDisplay('Stats')}> Stats </button>
-                            <button onClick={()=> changeDisplay('Summary')}> Summary </button>
-                            <button onClick={()=> changeDisplay('Lineups')}> Linueps </button>
-                            <button onClick={()=> changeDisplay('Standings')}> Standings </button>
-                            <button onClick={()=> changeDisplay('H2h')}> H2H </button>
-                            <button onClick={()=> changeDisplay('Predictions')}> Predictions </button>
+                            <button onClick={(e)=> changeDisplay(e,'Stats')}> Stats </button>
+                            <button onClick={(e)=> changeDisplay(e,'Summary')}> Summary </button>
+                            <button onClick={(e)=> changeDisplay(e,'Lineups')}> Linueps </button>
+                            <button onClick={(e)=> changeDisplay(e,'Standings')}> Standings </button>
+                            <button onClick={(e)=> changeDisplay(e,'H2h')}> H2H </button>
+                            <button onClick={(e)=> changeDisplay(e,'Predictions')}> Predictions </button>
                         </div>
                     </div>
                     <div className="other__details__mobile">
