@@ -6,16 +6,30 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 import Menu from '../Menu/Menu'
 import { CalendarTodayOutlined } from '@material-ui/icons';
+import { CircularProgress } from '@material-ui/core';
 
 const Home = ()=>{
     const [ date, setDate ] = useState(new Date());
     const format =date.getDate() < 10 ?  `${date.getFullYear()}-${date.getMonth()+1}-0${date.getDate()}` : `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
 
-    const {data} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?date=${format}`)
+    const {data, pending} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?date=${format}`);
 
     const [openCalender, setOpenCalender] = useState(false);
     const handleOpenCalender = ()=> {
         setOpenCalender(!openCalender);
+        closeCalender();
+    }
+    const closeCalender = ()=> {
+        setTimeout(()=>{
+            const btns = document.querySelectorAll(".calender button.react-calendar__tile")
+            for(let btn of btns){
+                btn.addEventListener('click',(e)=>{
+                    setTimeout(() => {
+                        setOpenCalender(false);
+                    }, 1500);
+                })
+            }
+        },1000)
     }
 
     const sortedFixture = {};
@@ -28,14 +42,14 @@ const Home = ()=>{
         }
         return initial
     },[])
-
     const league = [];
     for (let name in sortedFixture){
         if(sortedFixture){
             league.push({id: name, match: sortedFixture[name]})
         }
     }
-
+    console.log(league);
+    
     function convertToTime(d){
         var date = new Date(d * 1000);
         var hours = date.getHours();
@@ -49,6 +63,11 @@ const Home = ()=>{
         <div className="home">
             <div className="calender__date">
                 <div>
+                    <div className="visit__live">
+                        <Link to="/live">
+                            LIVE
+                        </Link>
+                    </div>
                     <div className="selected__date">
                         <p> { date.toDateString() } </p>
                     </div>
@@ -57,9 +76,21 @@ const Home = ()=>{
                     </div>
                 </div>
             </div>
-            <div className="calender__container">
-                {openCalender && (<Calendar className="calender" onChange={setDate} value={date}/> )}
-            </div>
+            {openCalender && (
+                <div className="calender__overlay">
+                    <div className="calender__container">
+                        <Calendar className="calender" onChange={setDate} value={date}  /> 
+                    </div>
+                </div>
+            )}
+            {pending && (
+                <div className="pending__container">
+                    <div className="pending__content">
+                        <CircularProgress />
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            )}
             <>
             <div className="home__body">
                 <div className="menu">

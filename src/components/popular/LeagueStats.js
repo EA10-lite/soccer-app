@@ -7,7 +7,8 @@ import useFetch from '../../useFetch'
 function LeagueStats({popularLeagues}) {
     const [ leagueId, setLeagueId ] = useState(popularLeagues[0].id); 
     const [ title , setTitle ] = useState('Standings');
-    // const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`)
+    const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`)
+    console.log(standings);
 
     const handleIdChange = (e,id)=>{
         setLeagueId(id)
@@ -29,8 +30,8 @@ function LeagueStats({popularLeagues}) {
         <div className="league__stats">
             <div className="league__stats__header">
                 <div className='league__container'>
-                    {popularLeagues.map(league=>(
-                        <div className="" key={league.id} onClick={(e)=> handleIdChange(e,league.id)}>
+                    {popularLeagues.map((league,i)=>(
+                        <div className={i === 0? "active__league" : ''} key={league.id} onClick={(e)=> handleIdChange(e,league.id)} >
                             <p> { league.name } </p>
                         </div>
                     ))}
@@ -39,7 +40,7 @@ function LeagueStats({popularLeagues}) {
                     <h3>Season 2021 </h3>
                 </div>
                 <div className="tabs">
-                    <button onClick={(e)=> handleTitleChange(e,'Standings')}>Standings</button>
+                    <button onClick={(e)=> handleTitleChange(e,'Standings')}className="active">Standings</button>
                     <button onClick={(e)=> handleTitleChange(e,'Fixtures')}>Fixtures</button>
                     <button onClick={(e)=> handleTitleChange(e,'Goals')}>Goals</button>
                     <button onClick={(e)=> handleTitleChange(e,'Assists')}>Assists</button>

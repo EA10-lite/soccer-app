@@ -28,6 +28,11 @@
     padding:0 10px;
     border-bottom: 1px solid lightgray;
 }
+.fixture__header .round {
+    font-size: 10px;
+    color:lightgray;
+    white-space: nowrap;
+}
 .info a{
     display: flex;
     align-items: center;
@@ -104,7 +109,7 @@
     width:80%;
     margin:0 auto;
 }
-.selected__date {
+.selected__date, .visit__live {
     background: #1a2b3c;
     border:1px solid white;
     padding:4px 8px;
@@ -112,10 +117,21 @@
     font-size: 12px;
     font-weight: 600;
 }
+.calender__overlay {
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index: 1;
+}
 .calender__container {
-    display: flex;
-    justify-content: center;
-    margin:20px auto;
+    margin:20px 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
  .react-calendar {
     font-family: inherit;
@@ -144,8 +160,35 @@ abbr[title] {
     font-weight: 600;
     color:white;
 }
+.react-calendar__month-view__days__day:hover {
+    color:black;
+}
+.react-calendar__month-view__days__day--neighboringMonth {
+    color:darkgray;
+}
 .react-calendar__month-view__days__day--weekend {
     color:#d10000;
+}
+.visit__live a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    color:white;
+}
+.pending__container {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    z-index:1;
+}
+.pending__content {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 @media screen and (max-width: 700px){
     .home__body .menu{
@@ -156,6 +199,9 @@ abbr[title] {
     }
 }
 @media screen and (max-width: 600px) {
+    .visit__live {
+        display: none;
+    }
     .fixture__away,.fixture__home {
         font-size: 0.65em;
     }
@@ -165,5 +211,6 @@ abbr[title] {
     }
     .calender__container {
         width: 80%;
+        margin:20px auto;
     }
 }
