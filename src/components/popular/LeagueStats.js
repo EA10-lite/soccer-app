@@ -8,6 +8,7 @@ function LeagueStats({popularLeagues}) {
     const [ leagueId, setLeagueId ] = useState(popularLeagues[0].id); 
     const [ title , setTitle ] = useState('Standings');
     const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`);
+    console.log(standings);
 
     const handleIdChange = (e,id)=>{
         setLeagueId(id)
