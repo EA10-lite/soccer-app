@@ -48,8 +48,7 @@ const Home = ()=>{
             league.push({id: name, match: sortedFixture[name]})
         }
     }
-    console.log(league);
-    
+
     function convertToTime(d){
         var date = new Date(d * 1000);
         var hours = date.getHours();

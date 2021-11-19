@@ -1,5 +1,5 @@
 .league__stats__header {
-    background-color: #7c8085;
+    background-color: #1a2b3c;
     margin:0;
     padding-bottom: 5px;
 }
@@ -14,8 +14,10 @@
     color:black;
     cursor: pointer;
 }
-.league__container > div p {
+.league__container > div {
     margin:auto 16px;
+}
+.league__container > div p {
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 6px;
@@ -24,8 +26,8 @@
     display: none;
 }
 .tabs {
-    border:1px solid black;
-    background-color: #7c8085;
+    border:1px solid white;
+    background-color: #282c34;
     width:90%;
     margin:10px auto;
     border-radius: 4px;
@@ -57,15 +59,21 @@
     color:lightgray;
 }
 .active__league {
-    border-bottom: 2px solid #1a2b3c;
+    border-bottom: 3px solid #285;
+
 }
 .tabs button.active {
-    background-color: #555;
+    background-color: #1a2b3c;
     color:white;
-    border:1px solid #1a2b3c;
+    border:1px solid lightgray;
 }
 .content__display {
     margin-top: 10px;
+}
+.coming__soon h3{
+    margin-top: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
 }
 @media screen and (min-width:900px){
     .league__container {

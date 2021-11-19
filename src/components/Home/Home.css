@@ -99,8 +99,9 @@
 }
 .calender__date {
     background: #7c8085;
+    background-color: #282c34;
     color:white;
-    padding:4px 0;
+    padding:6px 0;
 }
 .calender__date > div {
     display: flex;

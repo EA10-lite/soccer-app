@@ -53,7 +53,7 @@ const Match = ()=>{
                             <img src={`${details[0].league.logo}`} alt={`${details && details[0].league.name}`} />
                             <p>{details[0].league.name}</p>
                         </Link>
-                        <p>({details[0].league.round})</p>
+                        <p className="round">({details[0].league.round})</p>
                     </div>
                 )}
             </div>
@@ -66,21 +66,25 @@ const Match = ()=>{
                     </div>
                     <div className="match__header">
                         <div className="match__date">
-                            {details[0].fixture.status.elapsed !== null && details[0].fixture.status.short !== 'FT' && details[0].fixture.status.short !== 'HT' ? (
-                                <div className="ongoing">
-                                    <p> { details[0].fixture.status.elapsed }' </p>
-                                </div>
-                            ) : (
-                                <div className="fulltime">
-                                    <p> { details[0].fixture.status.short }' </p>
-                                </div>
-                            )}
                             <div className="date">
                                 <p>
                                     { details[0].fixture.date.split("T")[0]}
                                     <span>({ convertToTime(details[0].fixture.timestamp)})</span>
                                 </p>
                             </div>
+                            {details[0].fixture.status.elapsed !== null && details[0].fixture.status.short !== 'FT' && details[0].fixture.status.short !== 'HT' ? (
+                                <div className="ongoing">
+                                    <p> { details[0].fixture.status.elapsed }' </p>
+                                </div>
+                            ) : details[0].fixture.status.short === 'NS' ? (
+                                <div className="not__started">
+                                    <p> Not Started</p>
+                                </div>
+                            ) :(
+                                <div className="fulltime">
+                                    <p> Finished </p>
+                                </div>
+                            ) }
                         </div>
                         <div className="match__info">
                             <div className="match__home">
@@ -172,7 +176,7 @@ const Match = ()=>{
                     </div>
                     <div className="mobile__navigations">
                         <div className="btn__navigations">
-                            <button onClick={(e)=> changeDisplay(e,'Stats')}> Stats </button>
+                            <button onClick={(e)=> changeDisplay(e,'Stats')} className="active"> Stats </button>
                             <button onClick={(e)=> changeDisplay(e,'Summary')}> Summary </button>
                             <button onClick={(e)=> changeDisplay(e,'Lineups')}> Linueps </button>
                             <button onClick={(e)=> changeDisplay(e,'Standings')}> Standings </button>
@@ -182,7 +186,7 @@ const Match = ()=>{
                     </div>
                     <div className="other__details__mobile">
                         {display === 'Stats' ? (<Stats stats={details[0].statistics} /> ) : display === 'Lineups' ? (<Lineups lineups={details[0].lineups} />) : display === 'Standings' ? (
-                            <div className="standings">
+                            <div className="standings__view">
                                 {(standings && standings.length > 0 ) && standings[0].league.standings.map((standing,i)=>(
                                     <Standings standings={standing} homeId={homeId} awayId={awayId} key={i} />
                                 ))}
@@ -201,7 +205,7 @@ const Match = ()=>{
                     </>
                 </div>
                 )}
-                <div className="standings desktop__view">
+                <div className="standings__view desktop__view">
                     {(standings && standings.length > 0 ) && standings[0].league.standings.map((standing,i)=>(
                         <Standings standings={standing} homeId={homeId} awayId={awayId} key={i} />
                     ))}

@@ -7,8 +7,7 @@ import useFetch from '../../useFetch'
 function LeagueStats({popularLeagues}) {
     const [ leagueId, setLeagueId ] = useState(popularLeagues[0].id); 
     const [ title , setTitle ] = useState('Standings');
-    const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`)
-    console.log(standings);
+    const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`);
 
     const handleIdChange = (e,id)=>{
         setLeagueId(id)
@@ -48,6 +47,9 @@ function LeagueStats({popularLeagues}) {
             </div>
             <div className="content__display">
                <h3>{ title }</h3>
+               <div className="coming__soon">
+                   <h3>FEATURES COMING SOON</h3>
+               </div>
                 {/* { title === 'Standings' ? (
                     <>
                         {standings && standings[0] && standings[0].league.standings.map((standing,i)=>(
