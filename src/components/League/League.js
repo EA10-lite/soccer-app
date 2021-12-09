@@ -1,37 +1,41 @@
 import React from 'react';
 import './League.css';
+import { Link } from 'react-router-dom';
 import Standings from '../Standings/Standings';
 import useFetch from '../../useFetch';
 import { useParams } from 'react-router-dom';
 import TopScorer from './TopScorer';
 import TopAssist from './TopAssist';
-import LeagueFixture from '../LeagueFixture/LeagueFixture'
+// import LeagueFixture from '../LeagueFixture/LeagueFixture'
 
 function League() {
+
     const {id}= useParams()
     const {data: clubData} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/teams?league=${id}&season=2021`)
     const {data: leagueData} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/leagues?id=${id}`)
     const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${id}&season=2021`)
-    const { data: fixtures } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${id}&next=1`)
+    // const { data: fixtures } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${id}&next=1`)
     
     return (
         <div className="league__details">
             <div className="clubs">
                 {clubData && clubData.map(item=>(
-                     <div className="brand__club" key={item.team.id}>
+                     <Link to={`/club/${item.team.id}`} className="brand__club" key={item.team.id}>
                         <img src={`${item.team.logo}`} alt={`${item.team.name}`} />
-                    </div>
+                    </Link>
                 ))}
             </div>
             {leagueData && (
-                <div className="club__league__header">
-                    <img src={`${leagueData[0].league.logo}`} alt={`${leagueData[0].league.name}`} />
-                    <h1>{leagueData[0].league.name}</h1>
-                </div>
+                <>
+                    <div className="club__league__header">
+                        <img src={`${leagueData[0].league.logo}`} alt={`${leagueData[0].league.name}`} />
+                        <h1>{leagueData[0].league.name}</h1>
+                    </div>
+                </>
             )}
             <div className="league__info">
                 <div className="league-fixtures">
-                    <LeagueFixture fixtures={fixtures} />
+                    {/* <Fixture fixtures={fixtures} /> */}
                 </div>
                 <div className="league__statistics">
                     <div className="top__goals">
@@ -47,11 +51,7 @@ function League() {
                     ))}
                 </div>
             </div>
-            {/* PLAYER AVAILABILTY -->Injuries, red card, suspension */}
             {/* clubs  teams?league=39&season=2019*/}
-            {/* PLAYERS INFORMARTION */}
-            {/* COACHES */}
-            {/* player availability -- injuries?league=2&season=2020 */}
             {/* top yellow cards -- players/topyellowcards?season=2020&league=61 */}
             {/* top red cards -- players/topredcards?season=2020&league=61 */}
 

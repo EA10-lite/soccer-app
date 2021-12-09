@@ -1,8 +1,8 @@
 const initState = {
-    league : [
-        { name: 'Champions League',id:2},
-        { name: 'Europa League',id:3},
-        { name: 'Premier League', id: 39},
+    league: [
+        { name: 'UCL',id:2},
+        { name: 'Europa',id:3},
+        { name: 'EPL', id: 39},
         { name: 'Laliga', id: 140},
         { name: 'Serie A', id: 135},
         { name: 'Bundesliga', id: 78},
@@ -12,8 +12,8 @@ const initState = {
     ]
 };
 
-const popularLeagueReducer = (state = initState, action)=> {
-    return state
+const leagueReducer = (state = initState, action)=> {
+    return state;
 }
 
-export default popularLeagueReducer;
+export default leagueReducer;

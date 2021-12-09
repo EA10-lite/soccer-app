@@ -2,8 +2,6 @@
     color:white;
     font-size: 12px;
     font-weight: 600;
-    position: sticky;
-    top:1000;
     /* margin:20px 10px; */
 }
 .menu__details {
@@ -49,5 +47,6 @@
 @media screen and (max-width:768px){
     .menu {
         width: 90%;
+        margin:0 auto;
     }
 }

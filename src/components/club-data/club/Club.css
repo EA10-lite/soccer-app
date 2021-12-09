@@ -1,0 +1,109 @@
+.club__data {
+    width: 100%;
+}
+.club__data__info {
+    width:100%;
+}
+.club__fx {
+    width:90%;
+    margin:0 auto;
+}
+.club__data__info img {
+    width: 50px;
+    height:50px;
+    margin-right: 10px;
+    background-color: white;
+    padding:5px;
+    border-radius: 8px;
+}
+.club__data__info h2 {
+    font-size: 26px;
+}
+.club__data__info > div.bg {
+    background-size: cover;
+    background-position: center;
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+}
+.bg__content {
+    background:rgba(0,0,0,0.7);
+    width:100%;
+    padding:20px 0;
+}
+.bg__content .club__details div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.follow__club {
+    margin: 10px auto;
+}
+.follow__club button svg {
+    width: 16px !important;
+}
+.follow__club button {
+    display: flex;
+    align-items: center;
+    margin:0 auto;
+    background-color: #818181;
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+    padding:2px 12px;
+    border:none;
+    border-radius: 20px;
+}
+.bg__content .address {
+    display: flex;
+    justify-content: center;
+    color:lightgray;
+    align-items: center;
+}
+.address svg {
+    margin: 0 10px;
+}
+
+.club__data .tabs {
+    background-color: #282c34;
+    border:none;
+    border-radius: 0;
+    width:100%;
+    margin:0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+}
+.tabs::-webkit-scrollbar {
+    display: none;
+}
+.tabs button.active {
+    background-color: #1a2b3c;
+    color:white;
+    border:1px solid lightgray;
+}
+.tabs button {
+    background-color: inherit;
+    border:none;
+    cursor: pointer;
+    outline:none;
+    padding:6px 16px;
+    color:lightgray;
+    font-size: 12px;
+    font-weight: 600;
+}
+@media screen and (min-width:768px){
+    .club__data .tabs {
+        justify-content: center;
+    }
+}
+@media screen and (max-width:600px){
+    .club__data__info img {
+        width:35px;
+        height:35px;
+    }
+    .club__data__info h2 {
+        font-size: 18px;
+    }
+}

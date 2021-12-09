@@ -1,7 +1,7 @@
 import React from 'react';
 import './Standings.css';
 
-function Standings({standings, homeId,awayId}) {
+function Standings({standings}) {
     
     return (
         <div className="standings">
@@ -21,7 +21,7 @@ function Standings({standings, homeId,awayId}) {
                     </tr>
                 </thead>
                 {standings.map(item=> (
-                    <tbody className= {`table__body ${(item.team.id === homeId || item.team.id === `${awayId}` ) ? 'active' : 'not__active'}`} key={item.rank}>
+                    <tbody className='table__body' key={item.rank}>
                         <tr>
                             <td className="club__info">
                                 <p>{item.rank}</p>

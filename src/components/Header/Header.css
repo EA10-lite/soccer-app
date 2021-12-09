@@ -1,15 +1,37 @@
 .header {
+    background-color: #141922;
     position:sticky;
     top:0;
-    z-index: 999;
-    width: 100%;
-    display: flex;
-    background-color: #141922;
-    align-items: center;
-    justify-content: space-evenly;
-    padding:10px 0;
 }
-.brand a, .auth a{
+.header .header__container{
+    z-index: 999;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px 0;
+    margin:0 auto;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    color:white;
+}
+.brand .menu__svg {
+    margin-right: 10px;
+}
+.auth {
+    display: flex;
+    align-items: center;
+}
+.auth .notify {
+    margin-left: 10px;
+    color:white;
+}
+.notify svg {
+    height:20px;
+}
+.brand a, .header .auth a.__login {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -17,13 +39,26 @@
     font-size: 20px;
     font-weight: 600;
 }
-.auth a{
+.header .auth a.__login {
     font-size: 12px;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 15px;
     border:1px solid lightgray;
-    padding:4px 12px;
+    padding:4px 20px;
+    background-color: #818181;
 }
-.auth a:hover {
-    background-color: #61dafb;
+.user {
+    color:black;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding:3px 5px;
+}
+.user .avatar {
+    width:25px !important;
+    height:25px;
+    margin-right: 5px;
 }

@@ -25,9 +25,9 @@ const MatchSummary = ({details, homeId, awayId})=> {
                                 </div>
                                 {event.type === 'subst' ? (
                                     <div className="summary__player__details">
-                                        <p>Out { event.player.name } </p>
+                                        <p> In { event.player.name } </p>
                                         <div className="assist">
-                                            <p> In { event.assist.name } </p>
+                                            <p>Out { event.assist.name } </p>
                                         </div>
                                     </div>
                                 ) : (
@@ -57,9 +57,9 @@ const MatchSummary = ({details, homeId, awayId})=> {
                             <div className="summary__details">
                                 {event.type === 'subst' ? (
                                     <div className="summary__player__details">
-                                        <p>Out { event.player.name } </p>
+                                        <p>In { event.player.name } </p>
                                         <div className="assist">
-                                            <p>In { event.assist.name } </p>
+                                            <p>Out { event.assist.name } </p>
                                         </div>
                                     </div>
                                 ) : (

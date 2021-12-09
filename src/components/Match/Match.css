@@ -46,7 +46,7 @@
     font-size: 10px;
     font-weight: 500;
 }
-.ongoing , .fulltime, .not__started {
+.ongoing , .fulltime, .not__started, .halftime {
     font-size: 13px;
     text-align: center;
     font-weight: 500;

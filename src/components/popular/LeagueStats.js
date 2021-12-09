@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import './LeagueStats.css';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import useFetch from '../../useFetch'
+import useFetch from '../../useFetch';
+import TopAssist from '../League/TopAssist';
+import TopScorer from '../League/TopScorer';
+import Standings from '../Standings/Standings';
+import Fixture from '../fixture/Fixture';
 
 function LeagueStats({popularLeagues}) {
     const [ leagueId, setLeagueId ] = useState(popularLeagues[0].id); 
     const [ title , setTitle ] = useState('Standings');
     const { data: standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=2021`);
-    console.log(standings);
-
+    const { data: fixture } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?league=${leagueId}&season=2021`);
+    
     const handleIdChange = (e,id)=>{
         setLeagueId(id)
         const btns = document.querySelectorAll('.league__container > div');
@@ -48,15 +52,12 @@ function LeagueStats({popularLeagues}) {
             </div>
             <div className="content__display">
                <h3>{ title }</h3>
-               <div className="coming__soon">
-                   <h3>FEATURES COMING SOON</h3>
-               </div>
-                {/* { title === 'Standings' ? (
-                    <>
+                { title === 'Standings' ? (
+                    <div>
                         {standings && standings[0] && standings[0].league.standings.map((standing,i)=>(
-                            <Standings standings={standing}key={i} />
+                            <Standings standings={standing} key={i} />
                         ))}
-                    </>
+                    </div>
                 ) : title === 'Goals' ? (
                     <TopScorer id={leagueId} />
                 ) : title === 'Assists' ? (
@@ -64,15 +65,17 @@ function LeagueStats({popularLeagues}) {
                 ) : title ==='Players' ? (
                     <div></div>
                 ) : (
-                    <div className="fixtures"></div>
-                )} */}
+                    <div className="fixtures">
+                        <Fixture fixture={fixture} />
+                    </div>
+                )}
             </div>
         </div>
     )
 }
 const mapStateToProps = (state)=>{
     return {
-        popularLeagues : state.popularLeague.league
+        popularLeagues : state.league.league
     }
 }
 

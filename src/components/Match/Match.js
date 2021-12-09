@@ -7,7 +7,7 @@ import { ArrowRight } from '@material-ui/icons';
 import Stats from './Stats';
 import Lineups from './Lineups';
 import MatchSummary from '../summary/MatchSummary';
-import Predictions from './Predictions';
+import HeadToHead from './HeadToHead';
 
 const Match = ()=>{
     const [display, setDisplay] = useState('Stats');
@@ -20,7 +20,7 @@ const Match = ()=>{
     
     const { data : details} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?id=${matchId}`);
     const { data : standings} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/standings?league=${leagueId}&season=${season}`)
-    const { data : predictions } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/players?season=2021&league=2`);
+    const { data  } = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures/headtohead?h2h=${homeId}-${awayId}`);
 
     const filterEventsByGoal = details && details[0].events.filter(item=>{
         return item.type === 'Goal' ? item : null;
@@ -80,11 +80,15 @@ const Match = ()=>{
                                 <div className="not__started">
                                     <p> Not Started</p>
                                 </div>
-                            ) :(
+                            ) : details[0].fixture.status.short === 'HT' ?(
+                                <div className="halftime">
+                                    <p> Half Time </p>
+                                </div>
+                            ) : (
                                 <div className="fulltime">
                                     <p> Finished </p>
                                 </div>
-                            ) }
+                            )}
                         </div>
                         <div className="match__info">
                             <div className="match__home">
@@ -181,20 +185,19 @@ const Match = ()=>{
                             <button onClick={(e)=> changeDisplay(e,'Lineups')}> Linueps </button>
                             <button onClick={(e)=> changeDisplay(e,'Standings')}> Standings </button>
                             <button onClick={(e)=> changeDisplay(e,'H2h')}> H2H </button>
-                            <button onClick={(e)=> changeDisplay(e,'Predictions')}> Predictions </button>
                         </div>
                     </div>
                     <div className="other__details__mobile">
                         {display === 'Stats' ? (<Stats stats={details[0].statistics} /> ) : display === 'Lineups' ? (<Lineups lineups={details[0].lineups} />) : display === 'Standings' ? (
                             <div className="standings__view">
                                 {(standings && standings.length > 0 ) && standings[0].league.standings.map((standing,i)=>(
-                                    <Standings standings={standing} homeId={homeId} awayId={awayId} key={i} />
+                                    <Standings standings={standing}  key={i} />
                                 ))}
                         </div>
                         ) : display === 'Summary' ? (
                             <MatchSummary details={details} homeId={homeId} awayId={awayId} />
-                        ) : display === 'Predictions' ? (
-                            <Predictions predictions={predictions} />
+                        ) : display === 'H2h' ? (
+                            <HeadToHead  data={data} />
                         ) : ''}
                     </div>
                     <div className="other__details">

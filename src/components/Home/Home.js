@@ -114,7 +114,7 @@ const Home = ()=>{
                                 <Link to={`/match/match=${result.fixture.id}&league=${item.id}&season=${item.match[0].league.season}&home=${result.teams.home.id}&away=${result.teams.away.id}`}>
                                     <div className="fixture__details">
                                         <div className="fixture__time">
-                                            <p>{result.fixture.status.elapsed === null && result.fixture.status.short === 'NS' ? convertToTime(result.fixture.timestamp) : result.fixture.status.elapsed !== null  && result.fixture.status.short !== 'FT' && result.fixture.status.short !== 'HT' ?  result.fixture.status.elapsed : result.fixture.status.short}</p>
+                                            <p>{result.fixture.status.elapsed === null && result.fixture.status.short === 'NS' ? convertToTime(result.fixture.timestamp) : result.fixture.status.elapsed !== null  && result.fixture.status.short !== 'FT' && result.fixture.status.short !== 'HT' ?  `${result.fixture.status.elapsed}'` : result.fixture.status.short} </p>
                                         </div>
                                         <div className="fixture__menu">
                                             <div className="fixture__home">

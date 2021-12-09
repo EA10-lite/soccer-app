@@ -31,13 +31,25 @@
     transform:scale(1.8) ;
 }
 .club__league__header {
-    padding:50px;
+    padding:50px 50px 0 50px;
     /* background-color: #1a2b3c;
     color:white; */
     margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.search__result {
+    margin:0 auto;
+    padding-bottom: 50px;
+    width: 500px;
+}
+.input__field {
+    background-color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: black;
+    box-shadow: 2px 4px 4px 2px rgb(0 0 0 / 50%);
 }
 .club__league__header img {
     margin-right: 20px;
@@ -120,6 +132,10 @@
         width:20px;
         height:20px;
     }
+    .search__result {
+        width: 80%;
+        margin:0 auto;
+    }
 }
 
 @media screen and (min-width:900px) {
@@ -128,22 +144,3 @@
         margin:0 auto;
     }
 }
-
-/* @media screen and (max-width:700px){
-    .league__info {
-        display: block;
-        width: 80%;
-        margin:0 auto;
-    }
-    .league__standings {
-        flex:1;
-    }
-}
-@media screen and (max-width: 600px){
-    .match {
-        margin-bottom: 80px;
-    }
-    .league__match {
-        width: 90%;
-    }
-}  */

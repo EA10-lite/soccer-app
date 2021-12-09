@@ -1,0 +1,65 @@
+h3.pos__title {
+    font-size: 15px;
+    font-weight: 600;
+    width: 94%;
+    margin:10px auto;
+}
+.gk, .df, .md, .fw{
+    display: flex;
+    overflow-x: scroll;
+    width:94%;
+    margin:0 auto;
+}
+.gk::-webkit-scrollbar, .md::-webkit-scrollbar, .df::-webkit-scrollbar, .fw::-webkit-scrollbar {
+    display: none;
+}
+.gk__details, .df__details, .md__details, .fw__details{
+    display: flex;
+    flex-direction: column;
+    margin:0 5px;
+    transition: transform 450ms;
+    object-fit: contain;
+    padding-top:10px;
+    width: 150px;
+    height:200px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+}
+.gk__details:hover , .df__details:hover, .md__details:hover, .fw__details:hover{
+    transform: scale(1.08);
+    opacity: 1;
+    border-radius: 8px;
+}
+.squad__player__info {
+    margin-top: 160px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color:white;
+    background: rgba(0,0,0,0.7);
+    padding-left: 5px;
+}
+.squad__player__info p {
+    margin:0 ;
+    padding:0;
+}
+.gk__details img {
+    border-radius: 8px;
+}
+.gk__details h3 {
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    margin:0;
+    padding:0;
+}
+
+@media screen and (max-width:768px){
+    .squad {
+        width: 80%;
+        margin:0 auto;
+    }
+}

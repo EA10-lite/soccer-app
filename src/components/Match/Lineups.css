@@ -25,7 +25,7 @@
     margin-bottom: 10px;
 }
 
-.details{
+.details {
     font-size: 12px;
     font-weight: 600;
     padding:0 10px;
@@ -49,13 +49,24 @@
     justify-content: flex-end;
 }
 .away__startxi, .home__startxi, .home__sub, .away__sub{
-    padding:10px;
+    padding:10px 0;
+    width:46%;
 }
 .number {
     margin:0 5px;
+    font-size: 12px;
+    font-weight: 600;
+    width:20px;
 }
 
 @media screen and (max-width:768px ) {
+    .player, .coach {
+        background: white;
+        padding: 5px;
+        border: 1p;
+        border: 1px solid #1a2b3c; 
+        border-radius: 4px;
+    }
     .startxi, .substitute, .manager {
         box-shadow: none;
         background: none;

@@ -92,7 +92,7 @@
 }
 @media screen and (max-width: 768px){
     .content__display {
-        width:80%;
+        width:90%;
         margin:10px auto;
     }
 }

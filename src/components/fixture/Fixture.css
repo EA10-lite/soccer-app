@@ -1,0 +1,94 @@
+
+.club__fixture__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #282c34;
+    align-items: center;
+    color:white;
+    font-size: 12px;
+    font-weight: 600;
+    padding:0 10px;
+    border-bottom: 1px solid lightgray;
+    padding:5px 0;
+
+}
+.club__fixture__header p {
+    margin-left: 20px;
+}
+/* fixture */
+
+.fixture__body {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+.fixture__body a {
+    text-decoration: none;
+    color:black;
+    font-size: 12px;
+    font-weight:600;
+}
+.fixture__details {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fixture__menu {
+    flex:0.85;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.fixture__time {
+    flex:0.1;
+    justify-content: center;
+    text-align: center;
+}
+.fixture__home, .fixture__away {
+    flex:0.45;
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.fixture__scoreline {
+    flex:0.1;
+}
+.fixture__scoreline .score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #282c34;
+    border-radius: 4px;
+    font-weight: 600;
+    padding:5px 8px;
+    color: white;
+}
+.fixture__away {
+    justify-content: flex-start;
+}
+.divider {
+    margin:0 5px;
+}
+@media screen and (min-width:600px){
+    .club__fixtures {
+        max-width: 500px;
+        margin:10px auto;
+    }
+}
+@media screen and (max-width:600px){
+    .club__fixtures {
+        width:90%;
+        margin:10px auto;
+    }
+    .club__fixtures a {
+        font-size: 12px !important;
+        font-weight: 600;
+    }
+    .fixture__away,.fixture__home {
+        font-size: 0.65em;
+    }
+    .fixture__scoreline .score {
+        font-size: 12px;
+        padding:4px 5px;
+    }
+}

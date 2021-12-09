@@ -97,6 +97,8 @@
 .divider {
     margin:0 5px;
 }
+
+/* CALENDER STYLES */
 .calender__date {
     background: #7c8085;
     background-color: #282c34;
@@ -139,6 +141,7 @@
     border-radius: 10px;
     background: #1a2b3c;
     color:white;
+    margin:0 auto;
 }
 .react-calendar__navigation {
     height:30px;
