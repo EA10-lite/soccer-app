@@ -27,8 +27,6 @@ export const getFirestoreData = (id)=>{
                 const data = doc.data()
                 data.favorites.forEach((el,i)=>{
                     if(el.id === parseInt(id)){
-                        console.log("Lets fetch now")
-                        console.log(el);
                         return dispatch({type:'DOC_GOTTEN'})
                     }
                 })
