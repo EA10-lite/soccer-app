@@ -1,7 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import { Menu, Notifications, SportsSoccer } from '@material-ui/icons';
+import { Menu, SportsSoccer } from '@material-ui/icons';
 import { connect } from 'react-redux';
 import { Avatar } from '@material-ui/core';
 
