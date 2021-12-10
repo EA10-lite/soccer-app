@@ -28,9 +28,6 @@ function Header({firebase, handleOpen }) {
                             </Avatar>
                             <p> { firebase.auth.displayName ? firebase.auth.displayName : firebase.auth.email} </p>
                         </div>
-                        <Link to="/notify" className="notify">
-                            <Notifications />
-                        </Link>
                         </>
                     )}
                 </div>
