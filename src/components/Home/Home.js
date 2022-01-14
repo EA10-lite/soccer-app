@@ -13,7 +13,7 @@ const Home = ()=>{
     const format =date.getDate() < 10 ?  `${date.getFullYear()}-${date.getMonth()+1}-0${date.getDate()}` : `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
 
     const {data, pending} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?date=${format}`);
-
+    alert(format)
     const [openCalender, setOpenCalender] = useState(false);
     const handleOpenCalender = ()=> {
         setOpenCalender(!openCalender);
