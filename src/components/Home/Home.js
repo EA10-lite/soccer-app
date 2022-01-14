@@ -13,7 +13,6 @@ const Home = ()=>{
     const dayFormat = date.getDate() < 10 ? `0${ date.getDate() }` : date.getDate();
     const monthFormat = date.getMonth() + 1 < 10 ? `0${ date.getMonth() + 1}` : date.getMonth(); 
     const format = `${date.getFullYear()}-${monthFormat}-${dayFormat}`
-    alert(format);
     const {data, pending} = useFetch(`https://api-football-v1.p.rapidapi.com/v3/fixtures?date=${format}`);
     
     const [openCalender, setOpenCalender] = useState(false);
